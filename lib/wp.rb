@@ -1,15 +1,20 @@
-require 'rubygems'
 require 'dm-core'
-require 'pathname'
-
-DataMapper.setup(:default, 'mysql://localhost/wordpress')
+require "pathname"
 
 module WP
-end
+  extend self
+  ROOT = Pathname.pwd
 
-PWD = Pathname.getwd
-Pathname.glob(PWD.join("wp", "*.rb")).each do |file|
-  require file
-end
+  def init
+    setup_datamapper
+    load_models
+  end
 
-include WP
+  def setup_datamapper
+    DataMapper.setup(:default, 'mysql://localhost/wordpress')
+  end
+
+  def load_models
+    ROOT.join("lib", "wp").children.each{|model| require model }
+  end
+end
