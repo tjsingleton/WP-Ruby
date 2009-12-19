@@ -1,5 +1,5 @@
 require 'dm-core'
-require "pathname"
+require 'pathname'
 
 module WP
   extend self

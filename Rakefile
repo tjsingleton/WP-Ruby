@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'rake'
+require 'yard'
 
 begin
   require 'jeweler'
@@ -10,8 +11,10 @@ begin
     gem.email = "tjsingleton@vantagestreet.com"
     gem.homepage = "http://github.com/tjsingleton/wp-ruby"
     gem.authors = ["TJ Singleton"]
-    gem.dependency "php-serialize"
+    gem.add_dependency "php-serialize"
+    gem.add_dependency "dm-core"
     gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.add_development_dependency "yard"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
@@ -35,12 +38,7 @@ task :spec => :check_dependencies
 
 task :default => :spec
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "wp-ruby #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+YARD::Rake::YardocTask.new do |yard|
+  yard.files << ('README*')
+  yard.files << ('lib/**/*.rb')
 end
