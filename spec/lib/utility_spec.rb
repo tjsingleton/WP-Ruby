@@ -1,8 +1,9 @@
 require 'spec/spec_helper'
 
 describe WP::Utility do
+  include WP::Utility
+
   context 'is_serialized' do
-    include WP::Utility
     it 'only tries strings' do
        is_serialized?(1).should be_false
     end
@@ -36,5 +37,17 @@ describe WP::Utility do
     end
 
     # TODO Failures.
+  end
+
+  context "php_serialize delegators" do
+    it "delegates serialize to PHP" do
+      PHP.should_receive(:serialize)
+      serialize(1)
+    end
+
+    it "delegates unserialize to PHP" do
+      PHP.should_receive(:unserialize)
+      unserialize(1)
+    end
   end
 end
