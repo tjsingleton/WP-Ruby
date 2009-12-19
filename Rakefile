@@ -10,6 +10,7 @@ begin
     gem.email = "tjsingleton@vantagestreet.com"
     gem.homepage = "http://github.com/tjsingleton/wp-ruby"
     gem.authors = ["TJ Singleton"]
+    gem.dependency "php-serialize"
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

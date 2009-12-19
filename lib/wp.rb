@@ -3,18 +3,22 @@ require "pathname"
 
 module WP
   extend self
-  ROOT = Pathname.pwd
+  ROOT = Pathname.pwd.join("lib", "wp")
 
   def init
     setup_datamapper
-    load_models
+    load_files
   end
 
   def setup_datamapper
     DataMapper.setup(:default, 'mysql://localhost/wordpress')
   end
 
-  def load_models
-    ROOT.join("lib", "wp").children.each{|model| require model }
+  def load_files
+    files_to_load.each{|model| require model }
+  end
+
+  def files_to_load
+    [ROOT.join("models").children, ROOT.join("utility")].flatten
   end
 end
