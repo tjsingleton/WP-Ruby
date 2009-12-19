@@ -15,6 +15,7 @@ begin
     gem.add_dependency "dm-core"
     gem.add_development_dependency "rspec", ">= 1.2.9"
     gem.add_development_dependency "yard"
+    gem.add_development_dependency "metric_fu"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
@@ -41,4 +42,10 @@ task :default => :spec
 YARD::Rake::YardocTask.new do |yard|
   yard.files << ('README*')
   yard.files << ('lib/**/*.rb')
+end
+
+begin
+  require("metric_fu") 
+rescue LoadError
+  false
 end

@@ -9,12 +9,10 @@ module WP::Utility
   def is_serialized?(data)
     return false unless data.is_a? String
     data.strip!
-    return true if data == 'N'
-    badions = data.match /^([adObis]):/
-    return false unless badions
     case
-      when %w(a O s).include?(badions[1]) && data.match(/^#{badions[1]}:[0-9]+:.*[;}]/s) then true
-      when %w(b i d).include?(badions[1]) && data.match(/^#{badions[1]}:[0-9.E-]+;/) then true
+      when data == 'N' then true
+      when (matches = data.match(/^([aOs]):/)) && data.match(/^#{matches[1]}:[0-9]+:.*[;}]/s) then true
+      when (matches = data.match(/^([bid]):/)) && data.match(/^#{matches[1]}:[0-9.E-]+;/) then true
     else
       false
     end
@@ -30,5 +28,9 @@ module WP::Utility
   # delegates to php_serialize gem
   def unserialize(data)
     PHP.unserialize(data)
+  end
+
+  def should_serialize?(object)
+    false
   end
 end
