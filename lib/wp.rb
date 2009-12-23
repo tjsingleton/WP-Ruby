@@ -1,5 +1,4 @@
 require 'dm-core'
-require 'dm-types'
 require 'pathname'
 
 module WP
@@ -12,7 +11,7 @@ module WP
   end
 
   def setup_datamapper
-    DataMapper.setup(:default, 'mysql://localhost/wordpressmu')
+    DataMapper.setup(:default, 'mysql://localhost/wordpress')
   end
 
   def load_files
