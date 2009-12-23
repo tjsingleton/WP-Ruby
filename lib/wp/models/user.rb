@@ -10,6 +10,8 @@ class WP::User
   property :user_activation_key, String
   property :user_status, Integer
   property :display_name, String
+  property :spam, Integer
+  property :deleted, Integer
 
   has n, :posts, :child_key => :post_author
   has n, :comments
