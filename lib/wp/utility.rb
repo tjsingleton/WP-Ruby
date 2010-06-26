@@ -1,5 +1,3 @@
-require "php_serialize"
-
 module WP::Utility
   extend self
 

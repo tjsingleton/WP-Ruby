@@ -1,5 +1,7 @@
+require 'mysql'
 require 'dm-core'
 require 'pathname'
+require "php_serialize"
 
 module WP
   extend self
