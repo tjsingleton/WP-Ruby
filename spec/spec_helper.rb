@@ -6,24 +6,15 @@ require "bundler"
 Bundler.setup
 require 'rspec'
 require 'wp-ruby'
-require "dm-transactions"
 
+require "mysql"
+
+INITIAL_SQL = File.open("spec/wordpress_test_2010-06-27.sql").to_a
+
+MYSQL_CONNECTION = Mysql.new("localhost", "root", "", "wordpress_test")
 
 RSpec.configure do |config|
   config.before(:each) do
-    repository(:default) do
-      transaction = DataMapper::Transaction.new(repository)
-      transaction.begin
-      repository.adapter.push_transaction(transaction)
-    end
-  end
-
-  config.after(:each) do
-    repository(:default) do
-      while repository.adapter.current_transaction
-        repository.adapter.current_transaction.rollback
-        repository.adapter.pop_transaction
-      end
-    end
+    INITIAL_SQL.each {|line| MYSQL_CONNECTION.query(line) }
   end
 end

@@ -1,7 +1,6 @@
 require "bundler"
 Bundler.setup
 require "dm-core"
-require "dm-transactions"
 require "php_serialize"
 
 require 'pathname'

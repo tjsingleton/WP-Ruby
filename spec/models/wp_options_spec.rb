@@ -1,20 +1,12 @@
 require 'spec/spec_helper'
 
 describe WP::Option do
-  before do
-    @option = WP::Option.first
-  end
-
   it "updates" do
-    @option.option_value = "cool"
+    @option = WP::Option.new(:option_name => "Name", :option_value => "Test")
     @option.save.should == true
-    @option.option_value.should == "cool"
   end
 
   it "resets" do
-    @option.reload
-    @option.value.should_not == "cool"
-    puts @option.value
+    WP::Option.first(:option_name => "Name").should be_nil
   end
-
 end
