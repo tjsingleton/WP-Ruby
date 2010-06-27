@@ -1,7 +1,10 @@
-require 'mysql'
-require 'dm-core'
-require 'pathname'
+require "bundler"
+Bundler.setup
+require "dm-core"
+require "dm-transactions"
 require "php_serialize"
+
+require 'pathname'
 
 module WP
   extend self
@@ -13,7 +16,7 @@ module WP
   end
 
   def setup_datamapper
-    DataMapper.setup(:default, 'mysql://localhost/wordpress')
+    DataMapper.setup(:default, 'mysql://localhost/wordpress_test')
   end
 
   def load_files
