@@ -5,7 +5,8 @@ require 'wp-ruby'
 require 'rspec'
 require "mysql2"
 
-INITIAL_SQL = File.open("spec/wordpress_test_2010-06-27.sql").to_a
+TABLES = %w[wp_commentmeta wp_comments wp_links wp_options wp_postmeta wp_posts wp_term_relationships wp_term_taxonomy wp_terms wp_usermeta wp_users]
+INITIAL_SQL = File.open("spec/inserts.sql").to_a
 
 MYSQL_CONNECTION = Mysql2::Client.new({
   :host => "localhost",
@@ -15,6 +16,7 @@ MYSQL_CONNECTION = Mysql2::Client.new({
 
 RSpec.configure do |config|
   config.before(:each) do
+    TABLES.each {|table| MYSQL_CONNECTION.query("TRUNCATE TABLE #{table};") }
     INITIAL_SQL.each {|line| MYSQL_CONNECTION.query(line) }
   end
 end
