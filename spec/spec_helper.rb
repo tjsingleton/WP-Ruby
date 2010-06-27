@@ -1,17 +1,17 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-require "rubygems"
-require "bundler"
-Bundler.setup
-require 'rspec'
 require 'wp-ruby'
-
-require "mysql"
+require 'rspec'
+require "mysql2"
 
 INITIAL_SQL = File.open("spec/wordpress_test_2010-06-27.sql").to_a
 
-MYSQL_CONNECTION = Mysql.new("localhost", "root", "", "wordpress_test")
+MYSQL_CONNECTION = Mysql2::Client.new({
+  :host => "localhost",
+  :username => "root",
+  :database => "wordpress_test"
+})
 
 RSpec.configure do |config|
   config.before(:each) do

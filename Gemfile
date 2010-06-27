@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem 'mysql'
+gem 'mysql2'
 gem 'data_mapper'
 gem 'dm-mysql-adapter'
 
