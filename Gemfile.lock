@@ -1,5 +1,5 @@
 --- 
-hash: 89ca645d0ffcb4610c4148951add77d9b73b3441
+hash: 8f632998df1d22f942460db37022bce3b9f5aef9
 sources: 
 - Rubygems: 
     uri: http://rubygems.org
@@ -29,7 +29,7 @@ specs:
 - selenium-webdriver: 
     version: 0.0.24
 - capybara: 
-    version: 0.3.8
+    version: 0.3.9
 - columnize: 
     version: 0.3.1
 - configuration: 

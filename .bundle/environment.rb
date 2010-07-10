@@ -174,7 +174,7 @@ end
 module Bundler
   ENV_LOADED   = true
   LOCKED_BY    = '0.9.26'
-  FINGERPRINT  = "89ca645d0ffcb4610c4148951add77d9b73b3441"
+  FINGERPRINT  = "8f632998df1d22f942460db37022bce3b9f5aef9"
   HOME         = '/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/bundler'
   AUTOREQUIRES = {:test=>[["capybara", false], ["cucumber", false], ["launchy", false], ["rspec", false]], :default=>[["data_mapper", false], ["dm-mysql-adapter", false], ["mysql2", false], ["php_serialize", false], ["ruby-debug19", false]]}
   SPECS        = [
@@ -190,7 +190,7 @@ module Bundler
         {:name=>"ffi", :load_paths=>["/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/gems/ffi-0.6.3/lib", "/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/gems/ffi-0.6.3/ext"], :loaded_from=>"/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/specifications/ffi-0.6.3.gemspec"},
         {:name=>"json_pure", :load_paths=>["/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/gems/json_pure-1.4.3/lib"], :loaded_from=>"/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/specifications/json_pure-1.4.3.gemspec"},
         {:name=>"selenium-webdriver", :load_paths=>["/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/gems/selenium-webdriver-0.0.24/common/src/rb/lib", "/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/gems/selenium-webdriver-0.0.24/firefox/src/rb/lib", "/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/gems/selenium-webdriver-0.0.24/chrome/src/rb/lib", "/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/gems/selenium-webdriver-0.0.24/jobbie/src/rb/lib", "/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/gems/selenium-webdriver-0.0.24/remote/client/src/rb/lib"], :loaded_from=>"/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/specifications/selenium-webdriver-0.0.24.gemspec"},
-        {:name=>"capybara", :load_paths=>["/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/gems/capybara-0.3.8/lib"], :loaded_from=>"/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/specifications/capybara-0.3.8.gemspec"},
+        {:name=>"capybara", :load_paths=>["/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/gems/capybara-0.3.9/lib"], :loaded_from=>"/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/specifications/capybara-0.3.9.gemspec"},
         {:name=>"columnize", :load_paths=>["/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/gems/columnize-0.3.1/lib"], :loaded_from=>"/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/specifications/columnize-0.3.1.gemspec"},
         {:name=>"configuration", :load_paths=>["/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/gems/configuration-1.1.0/lib"], :loaded_from=>"/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/specifications/configuration-1.1.0.gemspec"},
         {:name=>"diff-lcs", :load_paths=>["/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/gems/diff-lcs-1.1.2/lib"], :loaded_from=>"/Users/tjsingleton/.rvm/gems/ruby-1.9.1-p378/specifications/diff-lcs-1.1.2.gemspec"},
