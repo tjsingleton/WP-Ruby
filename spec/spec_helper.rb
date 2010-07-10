@@ -2,10 +2,13 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 require 'wp-ruby'
+
 require 'rspec'
+require 'steak'
+require 'selenium-webdriver'
+
 require "mysql2"
 require "support/wp_reset.rb"
-
 
 RSpec.configure do |config|
   config.before(:each) do
